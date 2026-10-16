@@ -1,7 +1,7 @@
 const VALID_PRIORITIES = ["low", "medium", "high"];
 
 const validateAndNormalizePriority = (priority, res) => {
-  const normalized = priority.trim().toLowercase();
+  const normalized = priority.trim().toLowerCase();
 
   if (!VALID_PRIORITIES.includes(normalized)) {
     res.status(400).json({
@@ -82,4 +82,4 @@ const validateUpdateTask = (req, res, next) => {
   next();
 };
 
-module.exports = { validateCreateTask };
+module.exports = { validateCreateTask, validateUpdateTask };
